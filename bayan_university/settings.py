@@ -181,6 +181,9 @@ ALLOWED_HOSTS = [
     '127.0.0.1'
 ]
 
-CORS_ALLOWED_ORIGINS = ALLOWED_HOSTS
+CORS_ALLOWED_ORIGINS = [
+    # "https://www.proventus-solutions.com",
+    # 'https://proventus-solutions.com'
+]
 
 CSRF_TRUSTED_ORIGINS=CORS_ALLOWED_ORIGINS
