@@ -82,10 +82,10 @@ WSGI_APPLICATION = 'bayan_university.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASE_TYPE=os.getenv('DATABASE_TYPE','sqlite')
-POSTGRES_HOST=os.getenv("POSTGRES_HOST", "127.0.0.1")
-POSTGRES_PASSWORD=os.getenv("POSTGRES_PASSWORD", "postgres1")
-POSTGRES_USER=os.getenv("POSTGRES_USER", "postgres1")
-POSTGRES_NAME=os.getenv("POSTGRES_NAME", "proventus")
+POSTGRES_HOST=os.getenv("POSTGRES_HOST", "")
+POSTGRES_PASSWORD=os.getenv("POSTGRES_PASSWORD", "")
+POSTGRES_USER=os.getenv("POSTGRES_USER", "")
+POSTGRES_NAME=os.getenv("POSTGRES_NAME", "")
 POSTGRES_PORT=os.getenv("POSTGRES_PORT", "5432")
 POSTGRES_ENGINE=os.getenv("POSTGRES_ENGINE", 'django.db.backends.postgresql')
 
@@ -171,9 +171,9 @@ EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 EMAIL_HOST=os.getenv("EMAIL_HOST", 'smtp.gmail.com')
 EMAIL_USE_TLS = True                               
 EMAIL_PORT = "587"       
-EMAIL_HOST_USER=os.getenv("EMAIL_HOST_USER", "hello@proventus-solutions.com")     
-EMAIL_HOST_PASSWORD=os.getenv("EMAIL_HOST_PASSWORD", "tcfw rawr tktk unln" )     
-EMAIL_RECEIVER=os.getenv("EMAIL_RECEIVER", "hello@proventus-solutions.com")     
+EMAIL_HOST_USER=os.getenv("EMAIL_HOST_USER", "")     
+EMAIL_HOST_PASSWORD=os.getenv("EMAIL_HOST_PASSWORD", "" )     
+EMAIL_RECEIVER=os.getenv("EMAIL_RECEIVER", "")     
 
 
 ALLOWED_HOSTS = [
@@ -182,8 +182,6 @@ ALLOWED_HOSTS = [
 ]
 
 CORS_ALLOWED_ORIGINS = [
-    # "https://www.proventus-solutions.com",
-    # 'https://proventus-solutions.com'
 ]
 
 CSRF_TRUSTED_ORIGINS=CORS_ALLOWED_ORIGINS
