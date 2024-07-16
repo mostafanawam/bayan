@@ -148,6 +148,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 
 LANGUAGE_CODE = 'en'
+USE_I18N = True
 
 LANGUAGES = [
     ('en', 'English'),
@@ -156,7 +157,6 @@ LANGUAGES = [
 
 TIME_ZONE = 'UTC'
 
-USE_I18N = True
 
 USE_L10N = True
 
@@ -169,6 +169,8 @@ LOCALE_PATHS = [
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
 # STATICFILES_DIRS = [BASE_DIR / 'static']
 MEDIA_ROOT = os.path.join(BASE_DIR, 'assets')
 
