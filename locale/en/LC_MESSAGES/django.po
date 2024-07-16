@@ -24,3 +24,16 @@ msgstr "Hello, World!"
 
 msgid "dir"
 msgstr "ltr"
+
+
+
+msgid "english"
+msgstr "en"
+msgid "arabic"
+msgstr "ar"
+
+
+msgid "home"
+msgstr "Home"
+msgid "contact"
+msgstr "Contact Us"

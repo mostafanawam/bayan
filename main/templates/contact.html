@@ -1,19 +1,22 @@
 {% extends 'base.html' %}
 
+{% load i18n %}
 
 
 {% block title %} Contact US {% endblock %}
 
 
 {% block links %} 
-  <a class=" " href="{% url 'main:home' %}">Home</a>
-  <a class="active" href="{% url 'main:contact' %}">Contact Us</a>
+
+  <a  href="{% url 'main:home' %}">{% trans "home" %}</a>
+  <a class="active "{% load i18n %}
+ href="{% url 'main:contact' %}">{% trans "contact" %}</a>
 
 {% endblock %}
 
 
 
 {% block main %} 
-
+contact us
 
 {% endblock %}

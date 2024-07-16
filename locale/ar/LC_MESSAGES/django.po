@@ -25,3 +25,15 @@ msgstr "مرحبًا بالعالم!"
 
 msgid "dir"
 msgstr "rtl"
+
+
+msgid "english"
+msgstr "الانكليزية"
+msgid "arabic"
+msgstr "العربية"
+
+
+msgid "home"
+msgstr "رئيسية"
+msgid "contact"
+msgstr "تواصل معنا"
