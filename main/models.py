@@ -53,3 +53,35 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     class Meta:
         ordering = ['id']
+
+#  python manage.py dumpdata main.Category --output main/fixtures/Category.static.json
+class Category(models.Model):
+    name=models.CharField(max_length=100)
+    index=models.IntegerField(default=1)
+    is_enabled = models.BooleanField(default=True)
+
+    def __str__(self):
+        return self.name
+    class Meta:
+        verbose_name_plural="Categories"
+
+
+def upload_program(obj,file_name):
+    return f'programs/{obj.name}.png'
+
+#  python manage.py dumpdata main.Program --output main/fixtures/Program.static.json
+class Program(models.Model):
+    category=models.ForeignKey(
+        Category,
+        on_delete=models.CASCADE
+    )
+    name=models.CharField(max_length=100)
+    index=models.IntegerField(default=1)
+    is_enabled = models.BooleanField(default=True)
+    description=models.TextField()
+    image=models.ImageField(upload_to=upload_program)
+
+    def __str__(self):
+        return self.name
+    class Meta:
+        verbose_name_plural="Programs"

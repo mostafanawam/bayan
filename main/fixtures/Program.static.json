@@ -1,0 +1,110 @@
+[
+  {
+    "model": "main.program",
+    "pk": 1,
+    "fields": {
+      "category": 1,
+      "name": "Chemical Engneering",
+      "index": 1,
+      "is_enabled": true,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut",
+      "image": "programs/Chemical_engneering.png"
+    }
+  },
+  {
+    "model": "main.program",
+    "pk": 2,
+    "fields": {
+      "category": 1,
+      "name": "Computer Science",
+      "index": 2,
+      "is_enabled": true,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut",
+      "image": "programs/Chemical_engneering.png"
+    }
+  },
+  {
+    "model": "main.program",
+    "pk": 3,
+    "fields": {
+      "category": 1,
+      "name": "Mechanical Engineer",
+      "index": 3,
+      "is_enabled": true,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut",
+      "image": "programs/Chemical_engneering.png"
+    }
+  },
+  {
+    "model": "main.program",
+    "pk": 4,
+    "fields": {
+      "category": 2,
+      "name": "Bio Engneering",
+      "index": 1,
+      "is_enabled": true,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut",
+      "image": "programs/Chemical_engneering.png"
+    }
+  },
+  {
+    "model": "main.program",
+    "pk": 5,
+    "fields": {
+      "category": 2,
+      "name": "It Engineer",
+      "index": 2,
+      "is_enabled": true,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut",
+      "image": "programs/Chemical_engneering.png"
+    }
+  },
+  {
+    "model": "main.program",
+    "pk": 6,
+    "fields": {
+      "category": 2,
+      "name": "QA Engineer",
+      "index": 3,
+      "is_enabled": true,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut",
+      "image": "programs/Chemical_engneering.png"
+    }
+  },
+  {
+    "model": "main.program",
+    "pk": 7,
+    "fields": {
+      "category": 3,
+      "name": "Quraan",
+      "index": 1,
+      "is_enabled": true,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut",
+      "image": "programs/Chemical_engneering.png"
+    }
+  },
+  {
+    "model": "main.program",
+    "pk": 8,
+    "fields": {
+      "category": 3,
+      "name": "Ahadees Nabaweyya",
+      "index": 2,
+      "is_enabled": true,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut",
+      "image": "programs/Chemical_engneering.png"
+    }
+  },
+  {
+    "model": "main.program",
+    "pk": 9,
+    "fields": {
+      "category": 3,
+      "name": "Ahklak",
+      "index": 3,
+      "is_enabled": true,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut",
+      "image": "programs/Chemical_engneering.png"
+    }
+  }
+]
