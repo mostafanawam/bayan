@@ -30,6 +30,7 @@ class CategoryAdmin(admin.ModelAdmin):
     list_display = (
         'id',
         "name",
+        "name_ar",
         "index",
         'is_enabled',
     ) 

@@ -4,6 +4,7 @@
     "pk": 1,
     "fields": {
       "name": "Graduate",
+      "name_ar": "بكالوريوس",
       "index": 1,
       "is_enabled": true
     }
@@ -13,16 +14,8 @@
     "pk": 2,
     "fields": {
       "name": "Postgraduate",
+      "name_ar": "ماجستير",
       "index": 2,
-      "is_enabled": true
-    }
-  },
-  {
-    "model": "main.category",
-    "pk": 3,
-    "fields": {
-      "name": "Islamic Studies",
-      "index": 3,
       "is_enabled": true
     }
   }

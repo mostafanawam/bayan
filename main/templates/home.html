@@ -14,6 +14,7 @@
 
 
 {% block main %} 
+{% get_current_language as LANGUAGE_CODE %}
 
 
     <!-- slider_area_start -->
@@ -92,7 +93,11 @@
                         <div class="nav" id="nav-tab" role="tablist">
                             {% for category in categories  %}
                                 <a class="nav-item nav-link  {% if forloop.first %}active{% endif %}" id="nav-{{category.id}}-tab" data-toggle="tab" href="#nav-{{category.id}}" role="tab" aria-controls="nav-{{category.id}}" aria-selected="true">
-                                    {{category.name}}
+                                    {% if LANGUAGE_CODE == 'en' %}
+                                        {{category.name}}
+                                    {% else %}
+                                        {{category.name_ar}}
+                                    {% endif %}
                                 </a>
                             {% endfor %}
                         </div>
@@ -115,8 +120,16 @@
                                     </div>
                                     <div class="program__content">
                                         {% comment %} <span>Agriculture</span> {% endcomment %}
-                                        <h4>{{program.name}}</h4>
-                                        <p>{{program.description}}</p>
+
+                                        {% if LANGUAGE_CODE == 'en' %}
+                                            <h4>{{program.name}}</h4>
+                                            <p>{{program.description}}</p>
+                                        {% else %}
+                                            <h4>{{program.name_ar}}</h4>
+                                            <p>{{program.description_ar}}</p>
+                                        {% endif %}
+
+
                                         <a href="#" class="boxed-btn5">Apply NOw</a>
                                     </div>
                                 </div>

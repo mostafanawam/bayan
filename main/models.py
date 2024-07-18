@@ -57,6 +57,7 @@ class User(AbstractBaseUser, PermissionsMixin):
 #  python manage.py dumpdata main.Category --output main/fixtures/Category.static.json
 class Category(models.Model):
     name=models.CharField(max_length=100)
+    name_ar=models.CharField(max_length=100)
     index=models.IntegerField(default=1)
     is_enabled = models.BooleanField(default=True)
 
@@ -76,9 +77,11 @@ class Program(models.Model):
         on_delete=models.CASCADE
     )
     name=models.CharField(max_length=100)
+    name_ar=models.CharField(max_length=100)
     index=models.IntegerField(default=1)
     is_enabled = models.BooleanField(default=True)
     description=models.TextField()
+    description_ar=models.TextField()
     image=models.ImageField(upload_to=upload_program)
 
     def __str__(self):
