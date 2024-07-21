@@ -37,3 +37,8 @@ msgid "home"
 msgstr "رئيسية"
 msgid "contact"
 msgstr "تواصل معنا"
+msgid "about"
+msgstr "من نحن"
+
+msgid "apply_now"
+msgstr "قدم الان"

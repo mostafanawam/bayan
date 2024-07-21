@@ -37,3 +37,9 @@ msgid "home"
 msgstr "Home"
 msgid "contact"
 msgstr "Contact Us"
+msgid "about"
+msgstr "About Us"
+
+
+msgid "apply_now"
+msgstr "Apply Now"
