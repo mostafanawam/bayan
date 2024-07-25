@@ -39,6 +39,10 @@ msgid "contact"
 msgstr "Contact Us"
 msgid "about"
 msgstr "About Us"
+msgid "programs"
+msgstr "Programs"
+msgid "team"
+msgstr "Team"
 
 
 msgid "apply_now"

@@ -6,13 +6,6 @@
 {% block title %} Contact US {% endblock %}
 
 
-{% block links %} 
-<li><a   href="{% url 'main:home' %}">{% trans "home" %}</a></li>
-<li><a href="{% url 'main:about' %}">{% trans "about" %}</a></li>
-
-<li><a  class="active" href="{% url 'main:contact' %}">{% trans "contact" %}</a></li>
-{% endblock %}
-
 
 {% block main %} 
     <!-- bradcam_area_start  -->
@@ -30,7 +23,7 @@
   <!-- bradcam_area_end  -->
 
 
-  <section class="contact-section">
+  <section class="contact-section ">
     <div class="container">
         {% comment %} <div class="d-none d-sm-block mb-5 pb-4">
             <div id="map" style="height: 480px; position: relative; overflow: hidden;"></div>

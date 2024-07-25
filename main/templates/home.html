@@ -5,12 +5,7 @@
 {% block title %} Home {% endblock %}
 
 
-{% block links %} 
-  <li><a class="active"  href="{% url 'main:home' %}">{% trans "home" %}</a></li>
-  <li><a href="{% url 'main:about' %}">{% trans "about" %}</a></li>
-  <li><a href="{% url 'main:contact' %}">{% trans "contact" %}</a></li>
 
-{% endblock %}
 
 
 
@@ -131,190 +126,114 @@
   </section>
 
 
-  <div class="popular_program_area section__padding">
+
+
+
+
+  <div data-scroll-index='1' class="admission_area">
+    <div class="admission_inner">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="section_title text-center">
-                        <h3>Popular Program</h3>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <nav class="custom_tabs text-center">
-                        <div class="nav" id="nav-tab" role="tablist">
-                            {% for category in categories  %}
-                                <a class="nav-item nav-link  {% if forloop.first %}active{% endif %}" id="nav-{{category.id}}-tab" data-toggle="tab" href="#nav-{{category.id}}" role="tab" aria-controls="nav-{{category.id}}" aria-selected="true">
-                                    {% if LANGUAGE_CODE == 'en' %}
-                                        {{category.name}}
-                                    {% else %}
-                                        {{category.name_ar}}
-                                    {% endif %}
-                                </a>
-                            {% endfor %}
-                        </div>
-                    </nav>
-                </div>
-            </div>
-            <div class="tab-content" id="nav-tabContent">
-
-                
-                {% for  category in categories  %}
-                <div class="tab-pane fade show {% if forloop.first %}active{% endif %}" id="nav-{{category.id}}" role="tabpanel" aria-labelledby="nav-{{category.id}}-tab">
-                    <div class="row">
-                        {% for program in category.program_set.all %}
-                            <div class="col-lg-4 col-md-6">
-                                <div class="single__program">
-                                    <div class="program_thumb">
-                                        {% if program.image %}
-                                            <img src="{{program.image.url}}" alt="{{program.name}}">
-                                        {% endif %}
+            <div class="row justify-content-end">
+                <div class="col-lg-7">
+                    <div class="admission_form">
+                        <h3>Apply for Admission</h3>
+                        <form action="#">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="single_input">
+                                        <input type="text" placeholder="First Name" >
                                     </div>
-                                    <div class="program__content">
-                                        {% comment %} <span>Agriculture</span> {% endcomment %}
-
-                                        {% if LANGUAGE_CODE == 'en' %}
-                                            <h4>{{program.name}}</h4>
-                                            <p>{{program.description}}</p>
-                                        {% else %}
-                                            <h4>{{program.name_ar}}</h4>
-                                            <p>{{program.description_ar}}</p>
-                                        {% endif %}
-
-
-                                        <a href="#" class="boxed-btn5">Apply NOw</a>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="single_input">
+                                        <input type="text" placeholder="Last Name" >
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="single_input">
+                                        <input type="text" placeholder="Phone Number" >
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="single_input">
+                                        <input type="text" placeholder="Email Address" >
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="single_input">
+                                        <textarea cols="30" placeholder="Write an Application" rows="10"></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="apply_btn">
+                                        <button class="boxed-btn3" type="submit">Apply Now</button>
                                     </div>
                                 </div>
                             </div>
-                        {% endfor %}
-                    </div>
-                </div>
-                {% endfor %}
-            </div>
-
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="course_all_btn text-center">
-                        <a href="Courses.html" class="boxed-btn4">View All course</a>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
 
-
-
-    <section class="trainer_area section_gap_top">
-        <div class="container">
-
-          <div class="row">
-            <div class="col-lg-12">
-                <div class="section_title text-center p-4">
-                    <h3>Our Expert Trainers</h3>
-                    {% comment %} <p>
-                        Replenish man have thing gathering lights yielding shall you
-                      </p> {% endcomment %}
-                </div>
-            </div>
-        </div>
-
-
-          <div class="row justify-content-center d-flex align-items-center">
-            <div class="col-lg-3 col-md-6 col-sm-12 single-trainer">
-              <div class="thumb d-flex justify-content-sm-center">
-                <img class="img-fluid"  src="{% static 'img/trainer/t1.jpg' %}" alt="" />
+<!-- recent_event_area_strat  -->
+<div class="recent_event_area section__padding">
+  <div class="container">
+      <div class="row justify-content-center">
+          <div class="col-lg-8 col-md-10">
+              <div class="section_title text-center mb-70">
+                  <h3 class="mb-45">Recent Event</h3>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
               </div>
-              <div class="meta-text text-sm-center">
-                <h4>Mated Nithan</h4>
-                <p class="designation">Sr. web designer</p>
-                <div class="mb-4">
-                  <p>
-                    If you are looking at blank cassettes on the web, you may be
-                    very confused at the.
-                  </p>
-                </div>
-                <div class="align-items-center justify-content-center d-flex">
-                  <a href="#"><i class="ti-facebook"></i></a>
-                  <a href="#"><i class="ti-twitter"></i></a>
-                  <a href="#"><i class="ti-linkedin"></i></a>
-                  <a href="#"><i class="ti-pinterest"></i></a>
-                </div>
-              </div>
-            </div>
-  
-            <div class="col-lg-3 col-md-6 col-sm-12 single-trainer">
-              <div class="thumb d-flex justify-content-sm-center">
-                <img class="img-fluid" src="{% static 'img/trainer/t2.jpg' %}" alt="" />
-              </div>
-              <div class="meta-text text-sm-center">
-                <h4>David Cameron</h4>
-                <p class="designation">Sr. web designer</p>
-                <div class="mb-4">
-                  <p>
-                    If you are looking at blank cassettes on the web, you may be
-                    very confused at the.
-                  </p>
-                </div>
-                <div class="align-items-center justify-content-center d-flex">
-                  <a href="#"><i class="ti-facebook"></i></a>
-                  <a href="#"><i class="ti-twitter"></i></a>
-                  <a href="#"><i class="ti-linkedin"></i></a>
-                  <a href="#"><i class="ti-pinterest"></i></a>
-                </div>
-              </div>
-            </div>
-  
-            <div class="col-lg-3 col-md-6 col-sm-12 single-trainer">
-              <div class="thumb d-flex justify-content-sm-center">
-                <img class="img-fluid" src="{% static 'img/trainer/t3.jpg' %}" alt="" />
-              </div>
-              <div class="meta-text text-sm-center">
-                <h4>Jain Redmel</h4>
-                <p class="designation">Sr. Faculty Data Science</p>
-                <div class="mb-4">
-                  <p>
-                    If you are looking at blank cassettes on the web, you may be
-                    very confused at the.
-                  </p>
-                </div>
-                <div class="align-items-center justify-content-center d-flex">
-                  <a href="#"><i class="ti-facebook"></i></a>
-                  <a href="#"><i class="ti-twitter"></i></a>
-                  <a href="#"><i class="ti-linkedin"></i></a>
-                  <a href="#"><i class="ti-pinterest"></i></a>
-                </div>
-              </div>
-            </div>
-  
-            <div class="col-lg-3 col-md-6 col-sm-12 single-trainer">
-              <div class="thumb d-flex justify-content-sm-center">
-                <img class="img-fluid" src="{% static 'img/trainer/t4.jpg' %}" alt="" />
-              </div>
-              <div class="meta-text text-sm-center">
-                <h4>Nathan Macken</h4>
-                <p class="designation">Sr. web designer</p>
-                <div class="mb-4">
-                  <p>
-                    If you are looking at blank cassettes on the web, you may be
-                    very confused at the.
-                  </p>
-                </div>
-                <div class="align-items-center justify-content-center d-flex">
-                  <a href="#"><i class="ti-facebook"></i></a>
-                  <a href="#"><i class="ti-twitter"></i></a>
-                  <a href="#"><i class="ti-linkedin"></i></a>
-                  <a href="#"><i class="ti-pinterest"></i></a>
-                </div>
-              </div>
-            </div>
           </div>
-        </div>
-      </section>
-
-      
-
+      </div>
+      <div class="row justify-content-center">
+          <div class="col-lg-10">
+              <div class="single_event d-flex align-items-center">
+                  <div class="date text-center">
+                      <span>02</span>
+                      <p>Dec, 2020</p>
+                  </div>
+                  <div class="event_info">
+                      <a href="event_details.html">
+                          <h4>How to speake like a nativespeaker?</h4>
+                       </a>
+                      <p><span> <i class="flaticon-clock"></i> 10:30 pm</span> <span> <i class="flaticon-calendar"></i> 21Nov 2020 </span> <span> <i class="flaticon-placeholder"></i> AH Oditoriam</span> </p>
+                  </div>
+              </div>
+              <div class="single_event d-flex align-items-center">
+                  <div class="date text-center">
+                      <span>03</span>
+                      <p>Dec, 2020</p>
+                  </div>
+                  <div class="event_info">
+                      <a href="event_details.html">
+                          <h4>How to speake like a nativespeaker?</h4>
+                       </a>
+                      <p><span> <i class="flaticon-clock"></i> 10:30 pm</span> <span> <i class="flaticon-calendar"></i> 21Nov 2020 </span> <span> <i class="flaticon-placeholder"></i> AH Oditoriam</span> </p>
+                  </div>
+              </div>
+              <div class="single_event d-flex align-items-center">
+                  <div class="date text-center">
+                      <span>10</span>
+                      <p>Dec, 2020</p>
+                  </div>
+                  <div class="event_info">
+                      <a href="event_details.html">
+                          <h4>How to speake like a nativespeaker?</h4>
+                       </a>
+                      <p><span> <i class="flaticon-clock"></i> 10:30 pm</span> <span> <i class="flaticon-calendar"></i> 21Nov 2020 </span> <span> <i class="flaticon-placeholder"></i> AH Oditoriam</span> </p>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+<!-- recent_event_area_end  -->
+  
         
 
 {% endblock %}

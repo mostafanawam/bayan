@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+
+{% load i18n %}
+{% load static %}
+
+
+
+{% block title %} Programs {% endblock %}
+
+
+
+
+
+{% block main %} 
+    <!-- bradcam_area_start  -->
+    <div class="bradcam_area breadcam_bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="bradcam_text">
+                        <h3>{% trans "programs" %}</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- bradcam_area_end  -->
+
+
+    <div class="popular_program_area my-md-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section_title text-center">
+                        <h3>Our Program</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <nav class="custom_tabs text-center">
+                        <div class="nav" id="nav-tab" role="tablist">
+                            {% for category in categories  %}
+                                <a class="nav-item nav-link  {% if forloop.first %}active{% endif %}" id="nav-{{category.id}}-tab" data-toggle="tab" href="#nav-{{category.id}}" role="tab" aria-controls="nav-{{category.id}}" aria-selected="true">
+                                    {% if LANGUAGE_CODE == 'en' %}
+                                        {{category.name}}
+                                    {% else %}
+                                        {{category.name_ar}}
+                                    {% endif %}
+                                </a>
+                            {% endfor %}
+                        </div>
+                    </nav>
+                </div>
+            </div>
+            <div class="tab-content" id="nav-tabContent">
+
+                
+                {% for  category in categories  %}
+                <div class="tab-pane fade show {% if forloop.first %}active{% endif %}" id="nav-{{category.id}}" role="tabpanel" aria-labelledby="nav-{{category.id}}-tab">
+                    <div class="row">
+                        {% for program in category.program_set.all %}
+                            <div class="col-lg-4 col-md-6">
+                                <div class="single__program">
+                                    <div class="program_thumb">
+                                        {% if program.image %}
+                                            <img src="{{program.image.url}}" alt="{{program.name}}">
+                                        {% endif %}
+                                    </div>
+                                    <div class="program__content">
+                                        {% comment %} <span>Agriculture</span> {% endcomment %}
+
+                                        {% if LANGUAGE_CODE == 'en' %}
+                                            <h4>{{program.name}}</h4>
+                                            <p>{{program.description}}</p>
+                                        {% else %}
+                                            <h4>{{program.name_ar}}</h4>
+                                            <p>{{program.description_ar}}</p>
+                                        {% endif %}
+
+
+                                        <a href="#" class="boxed-btn5">Apply NOw</a>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+
+            {% comment %} <div class="row">
+                <div class="col-lg-12">
+                    <div class="course_all_btn text-center">
+                        <a href="Courses.html" class="boxed-btn4">View All course</a>
+                    </div>
+                </div>
+            </div> {% endcomment %}
+        </div>
+    </div>
+
+
+
+
+{% endblock %}
