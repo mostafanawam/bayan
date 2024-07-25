@@ -3580,7 +3580,7 @@ h3 {
   background-image: url(../img/admission/1.png);
   right: 0;
   content: "";
-  width: 60%;
+  width: 100%;
   top: 0;
   bottom: 0;
   z-index: -2;
@@ -3608,7 +3608,7 @@ h3 {
   background: #000;
   right: 0;
   content: "";
-  width: 60%;
+  width: 100%;
   top: 0;
   bottom: 0;
   z-index: -1;
@@ -3630,7 +3630,7 @@ h3 {
 }
 
 /* line 173, ../../Arafath/CL/january 2020/243.Education/HTML/scss/_course.scss */
-.admission_area .admission_inner::before {
+/* .admission_area .admission_inner::before {
   position: absolute;
   left: 0;
   width: 40%;
@@ -3640,7 +3640,7 @@ h3 {
   background-size: cover;
   background-position: center center;
   background-image: url(../img/admission/2.png);
-}
+} */
 
 @media (max-width: 767px) {
   /* line 173, ../../Arafath/CL/january 2020/243.Education/HTML/scss/_course.scss */
@@ -3660,7 +3660,7 @@ h3 {
 .admission_area .admission_form h3 {
   font-family: "Abril Fatface", cursive;
   color: #fff;
-  font-size: 55px;
+  font-size: 40px;
   margin-bottom: 40px;
 }
 
