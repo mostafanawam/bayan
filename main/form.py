@@ -3,6 +3,32 @@ from django.forms import Form
 from django.contrib.auth.forms import UserChangeForm
 from .models import User
 
+
+class ContactForm(forms.Form):
+    name = forms.CharField(
+        max_length=100, 
+        required=True,  
+        label="Your Name",
+        widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Your Name'})
+    )
+    email = forms.EmailField(
+        required=True, 
+        label="Your Email",
+        widget=forms.EmailInput(attrs={'class': 'form-control', 'placeholder': 'Your Email'})
+    )
+    subject = forms.CharField(
+        max_length=100, 
+        required=True,  
+        label="Subject",
+        widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Subject'})
+    )
+
+    message = forms.CharField(
+         required=True, label="Message",
+        widget=forms.Textarea(attrs={'class': 'form-control', 'placeholder': 'Message'})
+    )
+
+
 class UniversityApplicationForm(forms.Form):
     first_name = forms.CharField(max_length=100)
     last_name = forms.CharField(max_length=100)

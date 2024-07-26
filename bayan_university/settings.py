@@ -37,6 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_celery_results',
+    'django_filters',
+
 ]
 
 
@@ -191,7 +194,7 @@ EMAIL_USE_TLS = True
 EMAIL_PORT = "587"       
 EMAIL_HOST_USER=os.getenv("EMAIL_HOST_USER", "")     
 EMAIL_HOST_PASSWORD=os.getenv("EMAIL_HOST_PASSWORD", "" )     
-EMAIL_RECEIVER=os.getenv("EMAIL_RECEIVER", "")     
+EMAIL_RECEIVER=os.getenv("EMAIL_RECEIVER", "mostafanawam44@gmail.com")     
 
 
 ALLOWED_HOSTS = [
@@ -203,3 +206,18 @@ CORS_ALLOWED_ORIGINS = [
 ]
 
 CSRF_TRUSTED_ORIGINS=CORS_ALLOWED_ORIGINS
+
+
+CELERY_BROKER_URL=os.getenv("CELERY_BROKER_URL", 'amqp://guest:guest@localhost:5672/')
+RESULT_BACKEND_URL=os.getenv("RESULT_BACKEND_URL", 'amqp://guest:guest@localhost:5672/')
+
+accept_content = ['json']  # Specify accepted content types (e.g., JSON)
+task_serializer = 'json'  # Task serialization format
+result_serializer = 'json'  # Result serialization format
+
+# Concurrency settings (adjust as needed)
+CELERY_BROKER_CONNECTION_RETRY = True  # Deprecated, use the new setting below
+CELERY_BROKER_CONNECTION_RETRY_ON_STARTUP = True  # Retains existing behavior on startup
+ # Maximum tasks a worker can execute before it's replaced
+task_time_limit = 1200  # Maximum time a task can run (in seconds)
+CELERY_broker_connection_retry_ON_STARTUP = True
