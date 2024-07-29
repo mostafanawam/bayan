@@ -93,9 +93,9 @@
                             <a class="{% if request.resolver_match.url_name == 'programs' %}active{% endif %}" href="{% url 'main:programs' %}">{% trans "programs" %}</a>
                           </li> 
 
-                          <li>
+                          {% comment %} <li>
                             <a class="{% if request.resolver_match.url_name == 'team' %}active{% endif %}" href="{% url 'main:team' %}">{% trans "team" %}</a>
-                          </li> 
+                          </li>  {% endcomment %}
 
                           
                           <li>
