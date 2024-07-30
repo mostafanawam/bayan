@@ -35,7 +35,7 @@ def contact_page(request):
         form = ContactForm()        
     return render(request,'contact.html',{'form': form})
 
-def apply_page(request):
+def student_apply_page(request):
     if request.method == 'POST':
         form = UniversityApplicationForm(request.POST)
         if form.is_valid():
@@ -43,7 +43,20 @@ def apply_page(request):
     else:
         form = UniversityApplicationForm()
 
-    return render(request,'application.html', {'form': form})
+    return render(request,'student-application.html', {'form': form})
+
+
+
+def tutor_apply_page(request):
+    if request.method == 'POST':
+        form = UniversityApplicationForm(request.POST)
+        if form.is_valid():
+            return HttpResponse('Application submitted successfully!')
+    else:
+        form = UniversityApplicationForm()
+
+    return render(request,'tutor-application.html', {'form': form})
+
 
 
 def about_page(request):

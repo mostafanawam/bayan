@@ -53,8 +53,16 @@
                     </p>
                   </div>
                   <div class="text_wrap">
-                    <form action="{% url 'set_language' %}" method="post"> {% csrf_token %} <input name="next" type="hidden" value="{{ redirect_to }}"> {% get_current_language as LANGUAGE_CODE %} <button type="submit" class="btn btn-primary" name="language" value="en" {% if LANGUAGE_CODE == 'en' %}disabled{% endif %}>{% trans "english" %}</button>
-                      <button type="submit" class="btn btn-primary" name="language" value="ar" {% if LANGUAGE_CODE == 'ar' %}disabled{% endif %}>{% trans "arabic" %}</button>
+                    <form action="{% url 'set_language' %}" method="post"> 
+                      {% csrf_token %} 
+                      <input name="next" type="hidden" value="{{ redirect_to }}"> 
+                      {% get_current_language as LANGUAGE_CODE %}
+                      <button type="submit" class="btn btn-primary" name="language" value="en" {% if LANGUAGE_CODE == 'en' %}disabled{% endif %}>
+                        {% trans "english" %}
+                      </button>
+                      <button type="submit" class="btn btn-primary" name="language" value="ar" {% if LANGUAGE_CODE == 'ar' %}disabled{% endif %}>
+                        {% trans "arabic" %}
+                      </button>
                     </form>
                     <!-- <p><a href="#"> {% trans "english" %}</a><a href="#">{% trans "arabic" %}</a></p>  -->
                   </div>
@@ -98,26 +106,29 @@
                           </li>  {% endcomment %}
 
                           
-                          <li>
-                            <a class="{% if request.resolver_match.url_name == 'apply' %}active{% endif %}" href="{% url 'main:apply' %}">{% trans "apply_now" %}</a>
-                          </li> 
-
-                          
                           {% comment %} <li>
-                            <a href="Courses.html">Courses</a>
-                          </li>
+                            <a class="{% if request.resolver_match.url_name == 'apply' %}active{% endif %}" href="{% url 'main:apply' %}">{% trans "apply_now" %}</a>
+                          </li>  {% endcomment %}
+
+                          {% comment %}                           
                           <li>
-                            <a href="#">blog <i class="ti-angle-down"></i>
+                            <a href="Courses.html">{% trans "admission" %}</a>
+                          </li> {% endcomment %}
+                          <li>
+                            <a class="{% if request.resolver_match.url_name == 'student_apply' or request.resolver_match.url_name == 'tutor_apply' %}active{% endif %}" href="#">{% trans "admission" %}  <i class="ti-angle-down"></i>
                             </a>
                             <ul class="submenu">
                               <li>
-                                <a href="blog.html">blog</a>
+                                <a href="{% url 'main:student_apply' %}">{% trans "student_admission" %}</a>
                               </li>
                               <li>
-                                <a href="single-blog.html">single-blog</a>
+                                <a href="{% url 'main:tutor_apply' %}">{% trans "tutor_admission" %}</a>
                               </li>
                             </ul>
                           </li>
+
+                          {% comment %}
+
                           <li>
                             <a href="#">pages <i class="ti-angle-down"></i>
                             </a>
@@ -139,11 +150,11 @@
                         </ul>
                       </nav>
                     </div>
-                    <!-- <div class="Appointment">
+                  {% comment %} <div class="Appointment">
                       <div class="book_btn d-none d-lg-block">
                         <a href="{% url 'main:apply' %}">{% trans "apply_now" %}</a>
                       </div>
-                    </div> -->
+                    </div>  {% endcomment %}
                   </div>
                 </div>
               </div>

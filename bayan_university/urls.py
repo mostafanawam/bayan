@@ -28,7 +28,7 @@ urlpatterns = [
 urlpatterns += i18n_patterns(
     path('i18n/', include('django.conf.urls.i18n')),
     path("", include("main.urls")),
-        path('set_language/', set_language, name='set_language'),
+    path('set_language/', set_language, name='set_language'),
 
 )
 

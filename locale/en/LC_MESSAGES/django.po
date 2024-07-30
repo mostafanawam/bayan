@@ -43,6 +43,14 @@ msgid "programs"
 msgstr "Programs"
 msgid "team"
 msgstr "Team"
+msgid "admission"
+msgstr "Admissions"
+
+msgid "student_admission"
+msgstr "Student Admissions"
+msgid "tutor_admission"
+msgstr "Tutor Admissions"
+
 
 
 msgid "apply_now"

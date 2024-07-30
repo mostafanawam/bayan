@@ -43,6 +43,13 @@ msgid "programs"
 msgstr "البرامج"
 msgid "team"
 msgstr "فريق العمل"
+msgid "admission"
+msgstr "تسجيل"
+msgid "student_admission"
+msgstr "تسجيل طالب"
+msgid "tutor_admission"
+msgstr "تسجيل تدريسي"
+
 
 msgid "apply_now"
 msgstr "قدم الان"
