@@ -55,3 +55,10 @@ msgstr "Tutor Admissions"
 
 msgid "apply_now"
 msgstr "Apply Now"
+
+
+
+msgid "text_left"
+msgstr "text-left"
+msgid "text_right"
+msgstr "text-right"
