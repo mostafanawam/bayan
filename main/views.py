@@ -9,7 +9,7 @@ from main.tasks import send_email
 
 def home_page(request):
 
-    return render(request,'home.html')
+    return render(request,'main/home.html')
 
 def contact_page(request):
 
@@ -33,7 +33,7 @@ def contact_page(request):
             messages.error(request, 'Please correct the error(s) below.')
     else:
         form = ContactForm()        
-    return render(request,'contact.html',{'form': form})
+    return render(request,'main/contact.html',{'form': form})
 
 def student_apply_page(request):
     if request.method == 'POST':
@@ -43,7 +43,7 @@ def student_apply_page(request):
     else:
         form = UniversityApplicationForm()
 
-    return render(request,'student-application.html', {'form': form})
+    return render(request,'main/student-application.html', {'form': form})
 
 
 
@@ -55,16 +55,16 @@ def tutor_apply_page(request):
     else:
         form = UniversityApplicationForm()
 
-    return render(request,'tutor-application.html', {'form': form})
+    return render(request,'main/tutor-application.html', {'form': form})
 
 
 
 def about_page(request):
-    return render(request,'about.html')
+    return render(request,'main/about.html')
 
 
 def team_page(request):
-    return render(request,'team.html')
+    return render(request,'main/team.html')
 
 
 def programs_page(request):
@@ -74,6 +74,6 @@ def programs_page(request):
         # "categories_programs":categories_programs
     }
 
-    return render(request,'programs.html',context)
+    return render(request,'main/programs.html',context)
 
 
