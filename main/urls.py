@@ -15,4 +15,11 @@ urlpatterns = [
       path("admissions/student/", student_apply_page,name='student_apply'),
       path("admissions/tutor/", tutor_apply_page,name='tutor_apply'),
 
+
+
+
+      path("admin/login/", admin_login,name='admin_login'),
+      path("admin/main/", admin_main,name='admin_main'),
+      # path("admin/main/", admin_main,name='tutor_apply'),
+
 ]
