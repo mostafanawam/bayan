@@ -7038,3 +7038,36 @@ h6 {
   color: red;
   list-style-type: none;
 }
+
+
+
+
+
+.carousel-item {
+  height: 70vh; /* Default height */
+}
+@media (min-width: 992px) {
+  .carousel-item {
+      height:80vh;
+  }
+}
+.carousel-item img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
+.carousel-caption {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 100%; /* Optional: Ensure the caption spans the width of the carousel */
+  padding: 0 15px; /* Optional: Add padding for better spacing */
+  color: #fff; /* Ensure text is visible against the background */
+}
+
+.carousel-indicators {
+  display: none; /* Hide the indicators */
+}
