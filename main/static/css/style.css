@@ -7068,6 +7068,14 @@ h6 {
   color: #fff; /* Ensure text is visible against the background */
 }
 
+
+/* RTL specific adjustments */
+body[dir="rtl"] .carousel-caption {
+  left: auto;
+  right: 50%;
+  transform: translate(50%, -50%);
+}
+
 .carousel-indicators {
   display: none; /* Hide the indicators */
 }
