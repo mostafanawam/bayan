@@ -53,17 +53,19 @@
                     </p>
                   </div>
                   <div class="text_wrap">
-                    <form action="{% url 'set_language' %}" method="post"> 
+                   <form action="{% url 'set_language' %}" method="post"> 
                       {% csrf_token %} 
                       <input name="next" type="hidden" value="{{ redirect_to }}"> 
                       {% get_current_language as LANGUAGE_CODE %}
-                      <button type="submit" class="btn btn-primary" name="language" value="en" {% if LANGUAGE_CODE == 'en' %}disabled{% endif %}>
+                      <button type="submit" class="btn" name="language" value="en" {% if LANGUAGE_CODE == 'en' %}disabled{% endif %}>
                         {% trans "english" %}
                       </button>
-                      <button type="submit" class="btn btn-primary" name="language" value="ar" {% if LANGUAGE_CODE == 'ar' %}disabled{% endif %}>
+                        <span style="color: white;"> |</span>
+
+                      <button type="submit" class="btn"  name="language" value="ar" {% if LANGUAGE_CODE == 'ar' %}disabled{% endif %}>
                         {% trans "arabic" %}
                       </button>
-                    </form>
+                    </form> 
                     <!-- <p><a href="#"> {% trans "english" %}</a><a href="#">{% trans "arabic" %}</a></p>  -->
                   </div>
                 </div>

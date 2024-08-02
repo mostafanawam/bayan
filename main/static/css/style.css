@@ -3040,7 +3040,7 @@ h3 {
 
 /* line 32, ../../Arafath/CL/january 2020/243.Education/HTML/scss/_event.scss */
 .recent_event_area .single_event .event_info {
-  padding-left: 60px;
+  /* padding-left: 60px; */
 }
 
 @media (max-width: 767px) {
@@ -6934,6 +6934,7 @@ h6 {
 
 
 
+/* header css ============================================================================================ */
 
 /* line 105, ../../Arafath/CL/january 2020/243.Education/HTML/scss/_header.scss */
 .header-area .main-header-area .main-menu ul li a {
@@ -6979,9 +6980,6 @@ h6 {
     display: none !important;
   }
 }
-
-
-
 
 .header-area .main-header-area .main-menu ul li a,
 .header-area .main-header-area .main-menu ul li a:after,
@@ -7033,16 +7031,11 @@ h6 {
   height: 4px;
   transition: width .3s;
 }
-
-.errorlist {
-  color: red;
-  list-style-type: none;
-}
+/* end header css ============================================================================================ */
 
 
 
-
-
+/* carousel css ============================================================================================ */
 .carousel-item {
   height: 70vh; /* Default height */
 }
@@ -7079,3 +7072,84 @@ body[dir="rtl"] .carousel-caption {
 .carousel-indicators {
   display: none; /* Hide the indicators */
 }
+/* End carousel css ============================================================================================ */
+
+
+/*  language toggler css ============================================================================================ */
+
+.lang-switcher {
+  display: flex;
+  gap: 20px;
+  font-size: 18px;
+  font-weight: 500;
+  align-items: center;
+}
+
+.lang-switcher label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.lang-switcher input[type="radio"] {
+  display: none;
+}
+
+.lang-switcher .radio-label {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 30px;
+  border: 2px solid transparent;
+  transition: background-color 0.3s, color 0.3s, border 0.3s;
+}
+
+.lang-switcher input[type="radio"]:checked + .radio-label {
+  background-color: #0056b3;
+  border: 2px solid #0056b3;
+}
+
+.lang-switcher input[type="radio"]:disabled + .radio-label {
+  background-color: #6c757d;
+  color: #ffffff;
+  cursor: not-allowed;
+}
+
+.lang-switcher label:hover .radio-label {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+.lang-switcher label:active .radio-label {
+  background-color: #003d80;
+  transform: translateY(1px);
+}
+
+/* End language toggler css ============================================================================================ */
+
+
+
+
+.errorlist {
+  color: red;
+  list-style-type: none;
+}
+
+
+.recent_event_area .single_event img{
+  width:15rem;
+  height:12rem
+}
+
+
+
+/* Styles specific to small screens */
+@media (max-width: 750px) {
+  .recent_event_area .single_event img {
+      width: 100%;
+  
+  }
+}
+

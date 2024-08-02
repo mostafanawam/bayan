@@ -18,8 +18,5 @@ urlpatterns = [
 
 
 
-      path("admin/login/", admin_login,name='admin_login'),
-      path("admin/main/", admin_main,name='admin_main'),
-      # path("admin/main/", admin_main,name='tutor_apply'),
 
 ]

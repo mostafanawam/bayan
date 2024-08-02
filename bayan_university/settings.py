@@ -44,7 +44,8 @@ INSTALLED_APPS = [
 
 
 INSTALLED_APPS += [
-    'main'
+    'main',
+    'admins'
 ]
 
 

@@ -23,6 +23,10 @@ from django.views.i18n import set_language
 
 urlpatterns = [
     path('super-admin/', admin.site.urls),
+    
+    path("admin/", include("admins.urls")),
+
+
 ]
 
 urlpatterns += i18n_patterns(

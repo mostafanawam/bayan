@@ -2,7 +2,7 @@ from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.utils.translation import gettext as _
 from django.contrib import messages
-from main.form import AdminLoginForm, ContactForm, UniversityApplicationForm
+from main.form import  ContactForm, UniversityApplicationForm
 from main.models import Category, Program
 from main.tasks import send_email
 # Create your views here.
@@ -79,27 +79,3 @@ def programs_page(request):
 
 
 
-########################################################################
-from django.contrib.auth import authenticate, login
-def admin_login(request):
-    if request.method == 'POST':
-        form=AdminLoginForm(request.POST)
-        if(form.is_valid()):
-            username = form.cleaned_data['username']
-            password = form.cleaned_data['password']
-            user = authenticate(request, username=username, password=password)
-            if user is not None:
-                login(request, user)
-                return redirect('main:admin_main')  # Replace 'home' with your desired redirect URL
-            else:
-                messages.error(request, 'Invalid username or password')
-        else:
-            messages.error(request, 'Please correct the error below.')
-
-    return render(request,'admins/login.html')
-
-def admin_main(request):
-    if not request.user.is_authenticated:
-        return redirect('main:admin_login')
-    
-    return render(request,'admins/main.html')
