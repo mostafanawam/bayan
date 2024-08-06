@@ -2274,8 +2274,7 @@ h3 {
 
 /* line 10, ../../Arafath/CL/january 2020/243.Education/HTML/scss/_footer.scss */
 .footer .footer_top {
-  padding-top: 120px;
-  padding-bottom: 110px;
+  padding-top: 40px;
 }
 
 @media (max-width: 767px) {
@@ -2478,14 +2477,12 @@ h3 {
 }
 
 /* line 159, ../../Arafath/CL/january 2020/243.Education/HTML/scss/_footer.scss */
-.footer .copy-right_text {
-  padding-bottom: 60px;
-}
+
 
 /* line 161, ../../Arafath/CL/january 2020/243.Education/HTML/scss/_footer.scss */
 .footer .copy-right_text .copy_right {
   font-size: 15px;
-  color: #7a838b;
+  color: white;
   margin-bottom: 0;
   font-weight: 500;
 }
@@ -2515,7 +2512,6 @@ h3 {
 /* line 182, ../../Arafath/CL/january 2020/243.Education/HTML/scss/_footer.scss */
 .footer .footer_border {
   border-top: 1px solid #353b56;
-  padding-bottom: 60px;
 }
 
 /* line 188, ../../Arafath/CL/january 2020/243.Education/HTML/scss/_footer.scss */
