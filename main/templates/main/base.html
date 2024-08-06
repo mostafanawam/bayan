@@ -181,19 +181,19 @@
                 <h3 class="footer_title"> Quick Links </h3>
                 <ul>
                   <li>
-                    <a href="#">Online Learning</a>
+                    <a href="{% url 'main:about' %}">{% trans "about" %}</a>
                   </li>
                   <li>
-                    <a href="#">About Us</a>
+                    <a href="{% url 'main:contact' %}">{% trans "contact" %}</a>
                   </li>
                   <li>
-                    <a href="#">Careers</a>
+                    <a href="{% url 'main:programs' %}">{% trans "programs" %}</a>
                   </li>
                   <li>
-                    <a href="#">Press Center</a>
+                    <a href="{% url 'main:student_apply' %}">{% trans "student_admission" %}</a>
                   </li>
                   <li>
-                    <a href="#">Become an Instructor</a>
+                    <a href="{% url 'main:tutor_apply' %}">{% trans "tutor_admission" %}</a>
                   </li>
                 </ul>
               </div>
