@@ -7,5 +7,104 @@
 
 
 {% block main %}
-contacts
+<div style="margin-left: 250px;" class="p-5">
+        <h1>Contact Messages</h1>
+
+        <!-- <form method="get">
+            <div class="form-group">
+                {{ filter.form.name.label_tag }} {{ filter.form.name }}
+            </div>
+            <div class="form-group">
+                {{ filter.form.email.label_tag }} {{ filter.form.email }}
+            </div>
+            <button type="submit" class="btn btn-primary">Search</button>
+            <a href="{% url 'admins:admin_contacts' %}" class="btn btn-danger">Clear Filters</a>
+        </form> -->
+
+        <form method="get">
+            <div class="row">
+                <div class="col-md-3 form-group">
+                    <!-- <label for="name">Name:</label> -->
+                    <input type="text" name="name" id="name" value="{{ request.GET.name }}" class="form-control" placeholder="Search by name">
+                </div>
+                <div class="col-md-3 form-group">
+                    <!-- <label for="email">Email:</label> -->
+                    <input type="text" name="email" id="email" value="{{ request.GET.email }}" class="form-control" placeholder="Search by email">
+                </div>
+                <div class="col-md-3 form-group">
+                    <button type="submit" class="btn btn-primary">Search</button> 
+                    <a href="{% url 'admins:admin_contacts' %}" class="btn btn-danger">
+                        Clear Filters
+                    </a> 
+                </div>
+            </div>
+  
+        </form>
+
+
+
+        <table class="table w-100 ">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Subject</th>
+                    <th>Message</th>
+                    <th>Send At</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                {% for contact in paginated_items %}
+                    <tr>
+                        <td>{{ contact.name }}</td>
+                        <td>{{ contact.email }}</td>
+                        <td>{{ contact.subject }}</td>
+                        <td class="w-50">
+                            {% if contact.message|length > 150 %}
+                                <span class="short-content">{{ contact.message|truncatechars:150 }}</span>
+                                <span class="more-content">{{ contact.message }}</span>
+                                <span class="more-link" onclick="toggleContent(this)">Read more</span>
+                            {% else %}
+                                {{ contact.message }}
+                            {% endif %}
+
+                        </td>
+                        <td>{{ contact.created_at }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+
+   
+
+    <div class=" text-center  h5">
+        <span class="step-links h5">
+            {% if paginated_items.has_previous %}
+    
+                {% if request.GET.category  %}
+                    <a href="?page={{ paginated_items.previous_page_number }}&category={{ request.GET.category}}"  class="" style="text-decoration: none;"> &laquo; previous</a>
+                    {% else %}
+                    <a href="?page={{ paginated_items.previous_page_number }}"  class="text-primary" style="text-decoration: none;"> &laquo; previous</a>
+                {% endif %}
+            {% endif %}
+        
+            <span class="current text-black h5">
+                Page {{ paginated_items.number }} of {{ paginated_items.paginator.num_pages }}
+            </span>
+        
+            {% if paginated_items.has_next %}
+                {% if request.GET.category  %}
+                <a href="?page={{ paginated_items.next_page_number }}&category={{ request.GET.category}}"  style="text-decoration: none;" class="text-primary">next  &raquo;</a>
+                {% else %}
+                <a href="?page={{ paginated_items.next_page_number }}"  style="text-decoration: none;" class="text-primary">next  &raquo;</a>
+                {% endif %}
+            {% endif %}
+        </span>
+        </div>
+          
+
+  
+    </div>
  {% endblock %}

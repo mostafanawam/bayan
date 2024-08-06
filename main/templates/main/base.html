@@ -17,7 +17,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title> Bayan | {% block title %} {% endblock %} </title>
+    <title> BAYAN | {% block title %} {% endblock %} </title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/x-icon" href="{% static 'img/favicon.ico' %}">
@@ -117,7 +117,8 @@
                             <a href="Courses.html">{% trans "admission" %}</a>
                           </li> {% endcomment %}
                           <li>
-                            <a class="{% if request.resolver_match.url_name == 'student_apply' or request.resolver_match.url_name == 'tutor_apply' %}active{% endif %}" href="#">{% trans "admission" %}  <i class="ti-angle-down"></i>
+                            <a class="{% if request.resolver_match.url_name == 'student_apply' or request.resolver_match.url_name == 'tutor_apply' %}active{% endif %}" href="#">{% trans "admission" %}  
+                              <i class="ti-angle-down"></i>
                             </a>
                             <ul class="submenu">
                               <li>
@@ -312,7 +313,7 @@
           <div class="footer_border"></div>
           <div class="row">
             <div class="col-xl-12">
-              <p class="copy_right text-center"> Copyright &copy;2024 All rights reserved </p>
+              <p class="copy_right text-center"> Copyright &copy;2024 BAYAN - All rights reserved. </p>
             </div>
           </div>
         </div>

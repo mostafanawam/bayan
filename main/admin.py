@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 from main.form import CustomUserCreationForm
-from main.models import Category, Program, User
+from main.models import Category, ContactUs, Program, User
 from django.contrib.auth.models import Group
 
 admin.site.unregister(Group)
@@ -47,3 +47,20 @@ class ProgramAdmin(admin.ModelAdmin):
         'is_enabled'
     )
 admin.site.register(Program, ProgramAdmin)
+
+
+class ContactUsAdmin(admin.ModelAdmin):
+    list_display = (
+        'id',
+        'name',
+        'email',
+        'subject',
+        'created_at'
+    )
+admin.site.register(ContactUs, ContactUsAdmin)
+
+
+
+
+
+

@@ -1,3 +1,4 @@
+/*  start side bar  */
 .sidebar {
     height: 100vh;
     background-color: #343a40;
@@ -53,4 +54,27 @@
         transform: translateX(0);
     }
 
+}
+/*  end side bar  */
+
+
+
+
+.more-content {
+    display: none;
+}
+.more-link {
+    color: blue;
+    cursor: pointer;
+}
+
+.pagination .disabled .page-link {
+    cursor: not-allowed;
+    pointer-events: none;
+    color: #6c757d;
+    background-color: #fff;
+    border-color: #dee2e6;
+}
+.pages-margins{
+    margin-left: 50px;
 }

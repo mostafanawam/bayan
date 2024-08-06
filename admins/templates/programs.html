@@ -7,5 +7,40 @@
 
 
 {% block main %}
-programs
+<div style="margin-left: 250px;" class="p-5">
+    <h1> Categories</h1>
+
+    <table class="table w-100 ">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Name AR</th>
+                <th>Index</th>
+                <th>Is Enabled</th> 
+            </tr>
+        </thead>
+        <tbody>
+            {% for program in programs %}
+                <tr>
+                    <td>{{ program.name }}</td>
+                    <td>{{ program.name_ar }}</td>
+                    <td>{{ program.index }}</td>
+
+                    <td>
+                       
+                        {% if program.is_enabled %}
+                            <i class=" fa fa-check-circle"></i>
+                        {% else %}
+                        <i class=" fa fa-times-circle"></i>
+                        {% endif %}
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+
+
+    <h1> Programs</h1>
+</div>
  {% endblock %}

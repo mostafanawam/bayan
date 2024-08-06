@@ -45,12 +45,14 @@
         </div>
 
   
-        <div class="container">
             {% block main %}
             <!-- Page content -->
             {% endblock %}
-        </div>
 
         <script src="{% static 'js/bootstrap.min.js' %}" async defer></script>
+        <script src="{% static 'js/vendor/jquery-1.12.4.min.js' %}"></script>
+
+        <script src="{% static 'js/admin.js' %}"></script>
+
     </body>
 </html>

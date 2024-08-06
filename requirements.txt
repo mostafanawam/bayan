@@ -4,3 +4,4 @@ django-filter==23.3
 django-cors-headers
 celery==5.3.4
 django-celery-results==2.5.1
+Pillow
