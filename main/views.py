@@ -2,8 +2,9 @@ from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.utils.translation import gettext as _
 from django.contrib import messages
+from bayan_university import settings
 from main.form import  ContactForm, UniversityApplicationForm
-from main.models import Category, Program
+from main.models import Category, ContactUs, Program
 from main.tasks import send_email
 # Create your views here.
 
@@ -20,13 +21,30 @@ def contact_page(request):
             email = form.cleaned_data['email']
             subject = form.cleaned_data['subject']
             message = form.cleaned_data['message']
-            print(form.cleaned_data)
+            contact_us=ContactUs.objects.create(
+                name=name,
+                email=email,
+                subject=subject,
+                message=message
+            )
             # Send email (adjust this part with your email settings)
-            # send_email(
-            #     f"{subject} - Message from {name}",  # Subject
-            #     message,  # Message
-            #     ['recipient@example.com'],  # To email
-            # )
+            html_message=f"""
+                <h3>Hello Dear, <br> 
+                You have a new message from {name} having the email: {email}<br>
+                message subject:{subject} <br>
+                Message content:{message}<br>
+                </h3>
+            """
+            
+            send_email.delay(f'Bayan - Message from {name}',html_message,[settings.EMAIL_RECEIVER])
+            
+            html_customer=f"""
+                <h3>Hello {name}, <br> 
+                we have received your message
+            """
+            send_email.apply_async(args=(f'Bayan - Message Received',html_customer,[email]),countdown=60)
+            
+
             messages.success(request, 'Your message has been sent successfully!')
             return redirect('main:contact')
         else:

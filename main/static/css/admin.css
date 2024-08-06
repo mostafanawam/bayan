@@ -1,0 +1,56 @@
+.sidebar {
+    height: 100vh;
+    background-color: #343a40;
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    transition: width 0.3s;
+}
+
+.sidebar .logo {
+    padding: 20px;
+    text-align: center;
+}
+
+.sidebar .logo img {
+    max-width: 100px; /* Adjust size as needed */
+}
+
+.sidebar .nav-link {
+    color: white;
+    
+}
+
+.sidebar .nav-link:hover {
+    background-color: #495057;
+}
+
+
+.sidebar .nav-link.active {
+    background-color: #495057; /* Background color for active link */
+    color: #f8f9fa; /* Text color for active link */
+
+}
+
+.sidebar .nav-link.logout{
+    color: red;
+    border-top: 1px solid white;
+    margin-top: 50px;
+}
+
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 200px;
+        transform: translateX(-100%);
+        position: absolute;
+        z-index: 1000;
+    }
+
+    .sidebar.active {
+        transform: translateX(0);
+    }
+
+}

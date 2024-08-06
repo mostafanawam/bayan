@@ -3,9 +3,9 @@ from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.utils.translation import gettext as _
 from django.contrib import messages
-########################################################################
 from django.contrib.auth import authenticate, login,logout
 from admins.forms import AdminLoginForm
+
 def admin_login(request):
     if request.method == 'POST':
         form=AdminLoginForm(request.POST)
@@ -30,9 +30,22 @@ def admin_main(request):
     return render(request,'main.html')
 
 def admin_logout(request):
-    if request.method == 'POST':
-        logout(request)
-        return redirect("admins:admin_login")
-
+    logout(request)
     return redirect("admins:admin_login")
+
+def admin_programs(request):
+    return render(request,'programs.html')
+
+def admin_students(request):
+
+    return render(request,'students.html')
+
+
+def admin_staff(request):
+    return render(request,'staff.html')
+
+
+def admin_contacts(request):
+    return render(request,'contacts.html')
+
 
