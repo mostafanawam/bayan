@@ -223,26 +223,14 @@
                 <h3 class="footer_title"> Social links </h3>
                 <div class="socail_links">
                   <ul>
+                    {% for link  in links  %}
                     <li>
-                      <a href="#">
-                        <i class="ti-facebook"></i>
+                      <a href="{{link.link}}" style="background:{{link.color}}">
+                        <i class="{{link.icon}}"></i>
                       </a>
                     </li>
-                    <li>
-                      <a href="#">
-                        <i class="fa fa-twitter"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <i class="fa fa-google-plus"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <i class="fa fa-linkedin"></i>
-                      </a>
-                    </li>
+                    {% endfor %}                    
+                
                   </ul>
                 </div>
               </div>

@@ -327,8 +327,8 @@ h3 {
 
 /* line 210, ../../Arafath/CL/january 2020/243.Education/HTML/scss/theme-default.scss */
 .section__padding {
-  padding-top: 200px;
-  padding-bottom: 200px;
+  padding-top: 100px;
+  padding-bottom: 100px;
 }
 
 @media (max-width: 767px) {
@@ -2829,7 +2829,7 @@ h3 {
 /* line 37, ../../Arafath/CL/january 2020/243.Education/HTML/scss/_service.scss */
 .service_area .single_service .service_info p {
   margin-bottom: 0;
-  font-size: 18px;
+  font-size: 12px;
   font-weight: 400;
   color: #fff;
   line-height: 1;
@@ -3762,7 +3762,7 @@ h3 {
 
 /* line 133, ../../Arafath/CL/january 2020/243.Education/HTML/scss/_contact.scss */
 .contact-section {
-  padding: 130px 0 100px;
+  padding: 80px 0 100px;
 }
 
 @media (max-width: 991px) {
@@ -7199,3 +7199,61 @@ body[dir="rtl"] .carousel-caption {
 
 
 
+
+
+.services {
+  background: #f5f1f1;
+}
+
+.services-container {
+  margin-left: 5%;
+  /* Example padding value */
+  margin-right: 5%;
+  /* Example padding value */
+}
+
+@media only screen and (max-width: 600px) {
+  .services-container {
+      margin-left: 2%;
+      /* Example padding value */
+      margin-right: 2%;
+      /* Example padding value */
+  }
+}
+
+.services i {
+  display: block;
+  float: left;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  background: var(--primary-color);
+  color: white;
+  font-size: 1.6rem;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+
+.services p {
+  font-size: 0.8rem;
+  margin: 0px;
+  color: black;
+  font-weight: 300;
+}
+
+.overflow-hidden .text-services {
+  font-size: 1rem;
+  color: rgb(88, 85, 85);
+}
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.text-prime{
+  color: var(--primary-color) !important;
+}

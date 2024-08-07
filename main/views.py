@@ -5,14 +5,17 @@ from django.utils.translation import gettext as _
 from django.contrib import messages
 from bayan_university import settings
 from main.form import  ContactForm, UniversityApplicationForm
-from main.models import Category, ContactUs, Events, Program
+from main.models import Category, ContactUs, Events, Program, SocialLinks
 from main.tasks import send_email
 # Create your views here.
 
 def home_page(request):
     events=Events.objects.filter(event_date__gte=datetime.now().date()).order_by('event_date').order_by('event_time')
+
+    links=SocialLinks.objects.all()
     context={
-        "events":events
+        "events":events,
+        "links":links
     }
     return render(request,'main/home.html',context)
 
@@ -54,8 +57,14 @@ def contact_page(request):
         else:
             messages.error(request, 'Please correct the error(s) below.')
     else:
-        form = ContactForm()        
-    return render(request,'main/contact.html',{'form': form})
+        form = ContactForm()
+
+    links=SocialLinks.objects.all()
+    context={
+        'form': form,
+        "links":links
+    }
+    return render(request,'main/contact.html',context)
 
 def student_apply_page(request):
     if request.method == 'POST':
@@ -64,8 +73,12 @@ def student_apply_page(request):
             return HttpResponse('Application submitted successfully!')
     else:
         form = UniversityApplicationForm()
-
-    return render(request,'main/student-application.html', {'form': form})
+    links=SocialLinks.objects.all()
+    context={
+        'form': form,
+        "links":links
+    }
+    return render(request,'main/student-application.html', context)
 
 
 
@@ -77,12 +90,22 @@ def tutor_apply_page(request):
     else:
         form = UniversityApplicationForm()
 
-    return render(request,'main/tutor-application.html', {'form': form})
+    links=SocialLinks.objects.all()
+    context={
+        'form': form,
+        "links":links
+    }
+    return render(request,'main/tutor-application.html', context)
 
 
 
 def about_page(request):
-    return render(request,'main/about.html')
+    links=SocialLinks.objects.all()
+    context={
+        "links":links
+    }
+
+    return render(request,'main/about.html',context)
 
 
 def team_page(request):
@@ -91,8 +114,12 @@ def team_page(request):
 
 def programs_page(request):
     categories = Category.objects.all().order_by('index').prefetch_related('program_set')
+
+    links=SocialLinks.objects.all()
+  
     context={
         "categories":categories,
+        "links":links
         # "categories_programs":categories_programs
     }
 

@@ -1,1 +1,22 @@
-[{"model": "main.category", "pk": 1, "fields": {"name": "Masters", "name_ar": "ماستر", "index": 1, "is_enabled": true}}, {"model": "main.category", "pk": 2, "fields": {"name": "PhD", "name_ar": "دكتوراه", "index": 2, "is_enabled": true}}]
+[
+  {
+    "model": "main.category",
+    "pk": 1,
+    "fields": {
+      "name": "Masters",
+      "name_ar": "ماستر",
+      "index": 1,
+      "is_enabled": true
+    }
+  },
+  {
+    "model": "main.category",
+    "pk": 2,
+    "fields": {
+      "name": "PhD",
+      "name_ar": "دكتوراه",
+      "index": 2,
+      "is_enabled": true
+    }
+  }
+]

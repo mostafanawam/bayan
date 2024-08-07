@@ -104,6 +104,7 @@ class ContactUs(models.Model):
         verbose_name = "Contact Us"
         verbose_name_plural = "Contact Us"
 
+# python manage.py dumpdata main.Events --output main/fixtures/Events.test.json
 class Events(models.Model):
     title=models.CharField(max_length=100)
     location=models.CharField(max_length=100)
@@ -115,3 +116,17 @@ class Events(models.Model):
         return self.title 
     class Meta:
         verbose_name_plural = "Events"
+
+
+# python manage.py dumpdata main.SocialLinks --output main/fixtures/SocialLinks.static.json
+class SocialLinks(models.Model):
+    icon = models.CharField(max_length=100)
+    color = models.CharField(max_length=100, null=True, blank=True)
+    link = models.TextField()
+
+    def __str__(self):
+        return self.icon 
+    class Meta:
+        verbose_name_plural = "Social Links"
+
+
