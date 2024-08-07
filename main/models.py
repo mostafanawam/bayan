@@ -103,3 +103,15 @@ class ContactUs(models.Model):
     class Meta:
         verbose_name = "Contact Us"
         verbose_name_plural = "Contact Us"
+
+class Events(models.Model):
+    title=models.CharField(max_length=100)
+    location=models.CharField(max_length=100)
+    event_time=models.TimeField()
+    event_date=models.DateField()
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.title 
+    class Meta:
+        verbose_name_plural = "Events"

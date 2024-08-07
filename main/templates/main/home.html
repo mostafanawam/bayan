@@ -219,46 +219,25 @@
       <div class="row justify-content-center">
           <div class="col-lg-8 col-md-10">
               <div class="section_title text-center mb-70">
-                  <h3 class="mb-45">Recent Event</h3>
+                  <h3 class="mb-45">Coming Events</h3>
                   {% comment %} <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p> {% endcomment %}
               </div>
           </div>
       </div>
       <div class="row justify-content-center">
           <div class="col-lg-10">
-              <div class="single_event d-flex align-items-center">
+            {% for event in events %}
+            <div class="single_event d-flex align-items-center">
                 <div class="date text-center">
-                    <span>02</span>
-                    <p>Dec, 2020</p>
-                </div>
-
-                  <div class="event_info">
-                        <h4>How to speake like a nativespeaker?</h4>
-                      <p><span> <i class="flaticon-clock"></i> 10:30 pm</span> <span> <i class="flaticon-calendar"></i> 21Nov 2020 </span> <span> <i class="flaticon-placeholder"></i> AH Oditoriam</span> </p>
-                  </div>
-              </div>
-              <div class="single_event d-flex align-items-center">
-              
-                <div class="date text-center">
-                    <span>02</span>
-                    <p>Dec, 2020</p>
-                </div>
-            
-                  <div class="event_info">
-                        <h4>How to speake like a nativespeaker?</h4>
-                      <p><span> <i class="flaticon-clock"></i> 10:30 pm</span> <span> <i class="flaticon-calendar"></i> 21Nov 2020 </span> <span> <i class="flaticon-placeholder"></i> AH Oditoriam</span> </p>
-                  </div>
-              </div>
-              <div class="single_event d-flex align-items-center">
-                <div class="date text-center">
-                    <span>02</span>
-                    <p>Dec, 2020</p>
+                    <span>{{event.event_date.day}}</span>
+                    <p>{{event.event_date|date:"M" }}, {{event.event_date.year}}</p>
                 </div>
                   <div class="event_info">
-                          <h4>How to speake like a nativespeaker?</h4>
-                      <p><span> <i class="flaticon-clock"></i> 10:30 pm</span> <span> <i class="flaticon-calendar"></i> 21Nov 2020 </span> <span> <i class="flaticon-placeholder"></i> AH Oditoriam</span> </p>
+                        <h4>{{event.title}}</h4>
+                      <p><span> <i class="flaticon-clock"></i> {{event.event_time}}</span> <span> <i class="flaticon-calendar"></i> {{event.event_date}} </span> <span> <i class="flaticon-placeholder"></i> {{event.location}} </span> </p>
                   </div>
               </div>
+            {% endfor %}              
           </div>
       </div>
   </div>

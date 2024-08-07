@@ -1,16 +1,20 @@
+from datetime import datetime
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.utils.translation import gettext as _
 from django.contrib import messages
 from bayan_university import settings
 from main.form import  ContactForm, UniversityApplicationForm
-from main.models import Category, ContactUs, Program
+from main.models import Category, ContactUs, Events, Program
 from main.tasks import send_email
 # Create your views here.
 
 def home_page(request):
-
-    return render(request,'main/home.html')
+    events=Events.objects.filter(event_date__gte=datetime.now().date()).order_by('event_date').order_by('event_time')
+    context={
+        "events":events
+    }
+    return render(request,'main/home.html',context)
 
 def contact_page(request):
 

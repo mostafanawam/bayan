@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 from main.form import CustomUserCreationForm
-from main.models import Category, ContactUs, Program, User
+from main.models import Category, ContactUs, Events, Program, User
 from django.contrib.auth.models import Group
 
 admin.site.unregister(Group)
@@ -61,6 +61,20 @@ admin.site.register(ContactUs, ContactUsAdmin)
 
 
 
+
+
+
+
+class EventsAdmin(admin.ModelAdmin):
+    list_display = (
+        'id',
+        'title',
+        'location',
+        'event_time',
+        'event_date',
+        'created_at'
+    )
+admin.site.register(Events, EventsAdmin)
 
 
 
